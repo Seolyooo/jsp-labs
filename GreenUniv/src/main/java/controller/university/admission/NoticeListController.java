@@ -21,7 +21,7 @@ public class NoticeListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		List<BoardDTO> dtoList = boardService.findAll();
+		List<BoardDTO> dtoList = boardService.admissionNoticeFindAll();
 		
 		req.setAttribute("dtoList", dtoList);
 		

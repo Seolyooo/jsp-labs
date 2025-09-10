@@ -11,12 +11,16 @@ public enum DepartmentService {
 	
 	private DepartmentDAO dao = DepartmentDAO.getInstance();
 	
-	public void register(DepartmentDTO dto) {
-		dao.insert(dto);
+	public int register(DepartmentDTO dto) {
+		return dao.insert(dto);
 	}
 	
 	public DepartmentDTO findByDept_id(int dept_id) {
 		return dao.selectByDept_id(dept_id);
+	}
+	
+	public int findDeptId(String collegeName, String deptName) {
+		return dao.findDeptId(collegeName, deptName);
 	}
 	
 	public List<DepartmentDTO> findAll() {
